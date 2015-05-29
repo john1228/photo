@@ -1,0 +1,38 @@
+<html>
+
+<body>
+<div class="panel">
+  <h3>摄影师信息</h3>
+
+  <div class="panel_contents">
+    <div class="attributes_table">
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tr class="row row-">
+          <th>名字</th>
+          <td><%= @photographer.name %></td>
+        </tr>
+
+        <tr class="row row-">
+          <th>头像</th>
+          <td><%= image_tag(@photographer.avatar.thumb.url) %></td>
+        </tr>
+
+        <tr class="row row-">
+          <th>签名</th>
+          <td><%= @photographer.signature %></td>
+        </tr>
+        <tr class="row row-">
+          <th>工作年限</th>
+          <td><%= @photographer.worked_at.strftime('%Y-%d-%m') %></td>
+        </tr>
+        <tr class="row row-">
+          <th>背景</th>
+          <td><%= image_tag(@photographer.background.thumb.url) %></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+</body>
+</html>
+

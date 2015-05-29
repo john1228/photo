@@ -1,0 +1,39 @@
+<html>
+
+<body>
+<div class="panel">
+  <h3>景点信息</h3>
+
+  <div class="panel_contents">
+    <div class="attributes_table">
+      <table border="0" cellspacing="0" cellpadding="0">
+        <tr class="row row-">
+          <th>名称</th>
+          <td><%= @viewpoint.name %></td>
+        </tr>
+        <tr class="row row-">
+          <th>封面</th>
+          <td><%= image_tag(@viewpoint.cover.thumb.url) %></td>
+        </tr>
+        <tr class="row row-">
+          <th>标志照片</th>
+          <td>
+            <% for photo_wall in @viewpoint.viewpoint_photo_walls %>
+                <%= image_tag(photo_wall.photo.thumb.url) %>
+            <% end %>
+          </td>
+        </tr>
+        <tr class="row row-">
+          <th>介绍照片</th>
+          <td>
+            <% for photo_wall in @viewpoint.viewpoint_descriptions %>
+                <%= image_tag(photo_wall.photo.thumb.url) %>
+            <% end %>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+</body>
+</html>

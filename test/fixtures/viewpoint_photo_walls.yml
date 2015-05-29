@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  viewpoint_id: 1
+  phto: MyString
+
+two:
+  viewpoint_id: 1
+  phto: MyString
