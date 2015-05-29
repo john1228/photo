@@ -4,9 +4,9 @@ class CommentsController < ApplicationController
   def index
     level = params[:level]
     if level.eql?('1')||level.eql?('2')||level.eql?('3')
-      comments = Comment.where(photographers_id: params[:photographer], level: params[:level].to_i).page(params[:page]||1)
+      comments = Comment.where(photographer_id: params[:photographer], level: params[:level].to_i).page(params[:page]||1)
     else
-      comments = Comment.where(photographers_id: params[:photographer]).page(params[:page]||1)
+      comments = Comment.where(photographer_id: params[:photographer]).page(params[:page]||1)
     end
     render json: {
                code: 1,
