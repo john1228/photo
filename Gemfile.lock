@@ -207,7 +207,6 @@ DEPENDENCIES
   carrierwave
   coffee-rails (~> 4.0.0)
   devise
-  execjs
   fancybox2-rails (~> 0.2.8)
   faraday
   formtastic!
