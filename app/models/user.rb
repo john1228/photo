@@ -25,6 +25,13 @@ class User < ActiveRecord::Base
     years + (Date.today < birth + years.year ? -1 : 0)
   end
 
+  def summary
+    {
+        name: name,
+        avatar: avatar.thumb.url,
+    }
+  end
+
   def detail
     base = {
         token: token,

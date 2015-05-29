@@ -10,7 +10,8 @@ class Comment < ActiveRecord::Base
     {
         id: id,
         content: content,
-        images: comment_images.collect { |comment_image| comment_image.image.thumb.url }
+        images: comment_images.collect { |comment_image| comment_image.image.thumb.url },
+        user: user.summary
     }
   end
 
