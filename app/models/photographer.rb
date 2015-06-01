@@ -38,7 +38,11 @@ class Photographer < ActiveRecord::Base
                 pun: (comments.average(:pun).to_f).round(1)
             }
         },
-        comments: comments.count
+        comments: {
+            l1: comments.where(level: 1),
+            l2: comments.where(level: 2),
+            l3: comments.where(level: 3)
+        }
     }
   end
 
