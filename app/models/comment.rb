@@ -11,7 +11,8 @@ class Comment < ActiveRecord::Base
         id: id,
         content: content,
         images: comment_images.collect { |comment_image| comment_image.image.thumb.url },
-        user: user.summary
+        user: user.summary,
+        created: created_at.to_i
     }
   end
 
