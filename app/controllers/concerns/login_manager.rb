@@ -51,7 +51,7 @@ module LoginManager
     render json: {
                code: 1,
                data: {
-                   user: user.detail
+                   user: @user.detail
                }
            }
   end
