@@ -48,6 +48,12 @@ module LoginManager
       )
     end
     Rails.cache.write(@user.token, @user)
+    render json: {
+               code: 1,
+               data: {
+                   user: user.detail
+               }
+           }
   end
 
   def remove_cache
