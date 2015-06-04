@@ -2,7 +2,7 @@ class CaptchaController < ApplicationController
   include CaptchaManager
 
   def regist
-    user = User.find_by(mobile: params[:token])
+    user = User.find_by(mobile: params[:mobile])
     if user.nil?
       token = send_sms(params[:mobile])
       render json: {code: 1, data: {token: token}}

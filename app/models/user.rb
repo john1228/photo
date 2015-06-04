@@ -43,7 +43,7 @@ class User < ActiveRecord::Base
         mobile: mobile.nil? ? '' : mobile,
         sns: sns||''
     }
-    base.merge(baby: {name: baby_name, gender: baby_gender, birthday: baby_birthday}) unless baby_name.nil?
+    base = base.merge(baby: {name: baby_name, gender: baby_gender, birthday: baby_birthday}) unless baby_name.nil?
     base
   end
 

@@ -10,10 +10,10 @@ class StarsController < ApplicationController
 
   def create
     child_star = ChildStar.new(child_star_params)
+    (0..3).map do |index|
+      child_star.child_photos.build(photo: params[index.to_s.to_sym]) if params[index.to_s.to_sym].present?
+    end
     if child_star.save
-      (0..3).map do |index|
-        child_star.child_photos.create(photo: params[index.to_s.to_sym])
-      end
       render json: {code: 1}
     else
       render json: {code: 0, message: '宝贝报名失败'}
