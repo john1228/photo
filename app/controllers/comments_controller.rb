@@ -20,15 +20,18 @@ class CommentsController < ApplicationController
 
   def create
     begin
-      order = @user.order.find_by(order_no: params[:no])
-      image_ary = []
-      0..6.map { |image_index|
-        image_ary << params[image_index.to_s.to_sym]
+      order = @user.orders.find_by(order_no: params[:no])
+      comment = @user.comments.new(photographer: order.photographer, level: params[:level], pro: params[:pro],
+                                   att: params[:att], pun: params[:pun], content: params[:content])
+      (0..6).map { |image_index|
+        comment.comment_images.new(image: params[image_index.to_s.to_sym]) if params[image_index.to_s.to_sym].present?
       }
+      if comment.save
+        render json: {code: 1}
+      else
+        render json: {code: 0, message: '评论失败'}
+      end
 
-      @user.comments.create(photographer: order.photographer, level: params[:level], pro: params[:pro],
-                            att: params[:att], pun: params[:pun], content: params[:content], images: image_ary)
-      render json: {code: 1}
     rescue
       render json: {code: 0, message: '评论失败'}
     end
