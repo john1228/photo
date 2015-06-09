@@ -25,10 +25,10 @@ class CaptchaController < ApplicationController
   def binding
     user = User.find_by(mobile: params[:mobile])
     if user.nil?
-      render json: {code: 0, message: '该号码已绑定'}
-    else
       token = send_sms(params[:mobile])
       render json: {code: 1, data: {token: token}}
+    else
+      render json: {code: 0, message: '该号码已绑定'}
     end
   end
 
