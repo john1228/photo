@@ -12,6 +12,7 @@ class UsersController < ApplicationController
     logger.info my_params.to_json
     @user = User.new(my_params)
     if @user.save
+      Rails.cache.write(@user.token, @user)
       render json: {
                  code: 1,
                  data: {

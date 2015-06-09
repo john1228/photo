@@ -2,7 +2,7 @@
 
 class UserAvatarUploader < CarrierWave::Uploader::Base
 
-  include CarrierWave::RMagick
+  include CarrierWave::MiniMagick
   storage :file
 
   def store_dir

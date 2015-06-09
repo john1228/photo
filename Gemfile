@@ -16,9 +16,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
-
 gem 'spring', group: :development
-
 
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'polyamorous', github: 'activerecord-hackery/polyamorous'
@@ -28,7 +26,6 @@ gem 'devise'
 
 gem 'faraday'
 gem 'active_skin'
-gem 'streamio-ffmpeg'
 gem 'carrierwave'
 gem 'puma'
-gem 'rmagick'
+gem 'mini_magick'
