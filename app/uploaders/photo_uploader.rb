@@ -28,7 +28,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
     if file && model
       img = MiniMagick::Image::new(file.file)
       rate = img.width/1080.to_f
-      model.photo_height = 1080, img.height*rate.to_i
+      model.photo_height = img.height*rate.to_i
     end
   end
 
