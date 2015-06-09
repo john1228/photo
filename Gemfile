@@ -28,7 +28,7 @@ gem 'devise'
 
 gem 'faraday'
 gem 'active_skin'
-
+gem 'streamio-ffmpeg'
 gem 'carrierwave'
 gem 'puma'
 gem 'rmagick'
