@@ -13,7 +13,7 @@ ActiveAdmin.register ChildStar do
     column('民族', :nation)
     column('身高', :height)
     column('体重', :weight)
-    column('生日') { |child_star| child_star.birthday.strftime("%Y-%m-%d") }
+    column('生日') { |child_star| (child_star.birthday.strftime("%Y-%m-%d") rescue '') }
     column('城市', :city)
     column('价格', :price)
     actions
