@@ -14,7 +14,7 @@ class UserAvatarUploader < CarrierWave::Uploader::Base
   end
 
   def default_url
-    "/images/default/user.jpg"
+    'http://192.168.0.126/images/default/user.jpg'
   end
 
   def extension_white_list

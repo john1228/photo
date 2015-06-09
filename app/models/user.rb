@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   #has_many :coupons
   has_many :orders, dependent: :destroy
   has_many :comments, dependent: :destroy
-  has_many :babies, dependent: :destroy
+  #has_many :babies, dependent: :destroy
   has_many :orders, dependent: :destroy
   attr_accessor :remote_icon_url
 

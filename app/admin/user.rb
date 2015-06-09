@@ -9,7 +9,7 @@ ActiveAdmin.register User do
     column('姓名') { |user| link_to(user.name, admin_user_path(user)) }
     column('头像') { |user| image_tag(user.avatar.thumb.url) }
     column('性别') { |user| user.gender.eql?(1) ? '女' : '男' }
-    column('生日', :birthday)
+    column('生日') { |user| (user.birthday.strftime('%Y-%m-%d') rescue '') }
     column('绑定手机', :mobile)
     column('注册日期') { |user| user.created_at.strftime('%Y-%m-%d %H:%M:%S') }
   end
