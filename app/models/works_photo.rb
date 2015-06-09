@@ -1,7 +1,7 @@
 class WorksPhoto < ActiveRecord::Base
   belongs_to :works, class: Works
 
-  mount_uploader :photo, PhotoUploader
+  mount_uploader :photo, WorksPhotoUploader
 
   def detail
     {
