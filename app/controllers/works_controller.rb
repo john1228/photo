@@ -1,10 +1,17 @@
 class WorksController < ApplicationController
 
   def index
+    photographer = Photographer.find_by(id: params[:photographer])
+    if photographer.nil?
+      works = Works.category.page(params[:page]).map { |work| work.detail }
+    else
+      works = photographer.works.page(params[:page]||1)
+    end
+
     render json: {
                code: 1,
                data: {
-                   works: Works.category.page(params[:page]).map { |work| work.detail }
+                   works: works.map { |work| work.detail }
                }
            }
   end
@@ -38,10 +45,5 @@ class WorksController < ApplicationController
                    works: Works.where(conditions).page(params[:page]||1).collect { |works| works.detail }
                }
            }
-  end
-
-  private
-  def photographer
-    Photographer.find_by(id: params[:photographer])
   end
 end

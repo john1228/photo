@@ -1,3 +1,46 @@
+GIT
+  remote: git://github.com/activerecord-hackery/polyamorous.git
+  revision: 6e2e1cc5d0b53e4d8f02aa5286e6d11aa91f5ac3
+  specs:
+    polyamorous (1.2.0)
+      activerecord (>= 3.0)
+
+GIT
+  remote: git://github.com/activerecord-hackery/ransack.git
+  revision: d5d1cfaacfb531afe8d58fae6e30a6bf45c86925
+  specs:
+    ransack (1.6.6)
+      actionpack (>= 3.0)
+      activerecord (>= 3.0)
+      activesupport (>= 3.0)
+      i18n
+      polyamorous (~> 1.2)
+
+GIT
+  remote: git://github.com/gregbell/active_admin.git
+  revision: 0b4b22871fd332c94daec3c5138c0cf9a5b95451
+  specs:
+    activeadmin (1.0.0.pre1)
+      arbre (~> 1.0, >= 1.0.2)
+      bourbon
+      coffee-rails
+      formtastic (~> 3.1)
+      formtastic_i18n
+      inherited_resources (~> 1.6)
+      jquery-rails
+      jquery-ui-rails (~> 5.0)
+      kaminari (~> 0.15)
+      rails (>= 3.2, < 5.0)
+      ransack (~> 1.3)
+      sass-rails
+
+GIT
+  remote: git://github.com/justinfrench/formtastic.git
+  revision: 1a5f19a1906c5d9fad876737f32b568a9d489c9f
+  specs:
+    formtastic (3.2.0.pre)
+      actionpack (>= 3.2.13)
+
 GEM
   remote: https://ruby.taobao.org/
   specs:
@@ -37,8 +80,13 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    arbre (1.0.3)
+      activesupport (>= 3.0.0)
     arel (6.0.0)
     bcrypt (3.1.10)
+    bourbon (3.2.4)
+      sass (~> 3.2)
+      thor
     builder (3.2.2)
     carrierwave (0.10.0)
       activemodel (>= 3.2.0)
@@ -65,10 +113,19 @@ GEM
       railties (>= 3.1.0, < 5.0)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
+    formtastic_i18n (0.4.1)
     globalid (0.3.3)
       activesupport (>= 4.1.0)
+    has_scope (0.6.0)
+      actionpack (>= 3.2, < 5)
+      activesupport (>= 3.2, < 5)
     hike (1.2.3)
     i18n (0.7.0)
+    inherited_resources (1.6.0)
+      actionpack (>= 3.2, < 5)
+      has_scope (~> 0.6.0.rc)
+      railties (>= 3.2, < 5)
+      responders
     jbuilder (2.2.12)
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
@@ -76,7 +133,12 @@ GEM
       rails-dom-testing (~> 1.0)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
+    jquery-ui-rails (5.0.5)
+      railties (>= 3.2.16)
     json (1.8.2)
+    kaminari (0.16.3)
+      actionpack (>= 3.0.0)
+      activesupport (>= 3.0.0)
     libv8 (3.16.14.7)
     loofah (2.0.1)
       nokogiri (>= 1.5.9)
@@ -167,17 +229,21 @@ PLATFORMS
 
 DEPENDENCIES
   active_skin
+  activeadmin!
   carrierwave
   coffee-rails (~> 4.0.0)
   devise
   fancybox2-rails (~> 0.2.8)
   faraday
+  formtastic!
   jbuilder (~> 2.0)
   jquery-rails
   mini_magick
   mysql2
+  polyamorous!
   puma
   rails (= 4.2.1)
+  ransack!
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   spring

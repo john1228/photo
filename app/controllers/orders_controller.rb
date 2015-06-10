@@ -21,7 +21,7 @@ class OrdersController < ApplicationController
 
     render json: {
                code: 1,
-               data: {orders: @user.orders.where(conditions).page(params[:page]||1).collect { |order| order.detail }}
+               data: {orders: @user.orders.where(conditions).order(id: :desc).page(params[:page]||1).collect { |order| order.detail }}
            }
   end
 

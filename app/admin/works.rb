@@ -14,7 +14,7 @@ ActiveAdmin.register Works do
     column('类型', :works_type)
     column('持续时间') { |works| "#{works.during}小时" }
     column('店铺价') { |works| "#{works.price}元" }
-    column('折扣价') { |works| "#{works.discount}小时" }
+    column('折扣价') { |works| "#{works.discount}元" }
     column('介绍') { |works| truncate(works.intro) }
     actions
   end
