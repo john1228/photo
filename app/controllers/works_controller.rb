@@ -3,7 +3,7 @@ class WorksController < ApplicationController
   def index
     photographer = Photographer.find_by(id: params[:photographer])
     if photographer.nil?
-      works = Works.category.page(params[:page]).map { |work| work.detail }
+      works = Works.category.page(params[:page])
     else
       works = photographer.works.page(params[:page]||1)
     end
