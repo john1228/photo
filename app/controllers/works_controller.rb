@@ -36,7 +36,7 @@ class WorksController < ApplicationController
 
   def search
     conditions = {}
-    conditions = conditions.merge(photograper_id: Photographer.where('name like ?', "%#{params[:keyword]}%").pluck(:id)) unless params[:keyword].blank?
+    conditions = conditions.merge(photographer_id: Photographer.where('name like ?', "%#{params[:keyword]}%").pluck(:id)) unless params[:keyword].blank?
     conditions = conditions.merge(age: params[:age]) unless params[:age].blank?
     conditions = conditions.merge(works_type: params[:type]) unless params[:type].blank?
     render json: {
