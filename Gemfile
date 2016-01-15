@@ -16,12 +16,12 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'spring', group: :development
+gem 'spring', '~> 1.3.3', group: :development
 
-gem 'activeadmin', github: 'gregbell/active_admin'
-gem 'polyamorous', github: 'activerecord-hackery/polyamorous'
-gem 'ransack', github: 'activerecord-hackery/ransack'
-gem 'formtastic', github: 'justinfrench/formtastic'
+gem 'activeadmin', '~> 1.0.0.pre1'#, github: 'active_admin'
+gem 'polyamorous'#, github: 'activerecord-hackery/polyamorous'
+gem 'ransack'#, github: 'activerecord-hackery/ransack'
+gem 'formtastic'#, github: 'justinfrench/formtastic'
 gem 'devise'
 
 gem 'faraday'
@@ -29,3 +29,7 @@ gem 'active_skin'
 gem 'carrierwave'
 gem 'puma'
 gem 'mini_magick'
+gem 'bootstrap-sass'
+
+
+gem 'apn_on_rails'

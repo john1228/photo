@@ -8,21 +8,21 @@ module CaptchaManager
 
   private
   def send_sms(mobile)
-    # conn = Faraday.new(url: 'https://sandboxapp.cloopen.com:8883')
-    # timestamp = Time.now.strftime("%Y%m%d%H%M%S")
-    # account = 'aaf98f894b0b8616014b19c5e46709c3'
-    # account_token = '6212e011d5634ff896a9a179c313c217'
-    # appid = 'aaf98f894b0b8616014b19c7261f09cd'
-    # templateid = '12107'
+    conn = Faraday.new(url: 'https://sandboxapp.cloopen.com:8883')
+    timestamp = Time.now.strftime("%Y%m%d%H%M%S")
+    account = 'aaf98f894b0b8616014b19c5e46709c3'
+    account_token = '6212e011d5634ff896a9a179c313c217'
+    appid = 'aaf98f894b0b8616014b19c7261f09cd'
+    templateid = '12107'
     captcha = %w"0 1 2 3 4 5 6 7 8 9".sample(6).join('')
-    # auth = Base64.strict_encode64(account + ":" + timestamp)
-    # sig = Digest::MD5.hexdigest(account + account_token + timestamp)
-    #
-    # conn.headers['Accept'] = 'application/json'
-    # conn.headers['Authorization'] = auth
-    # conn.headers['Content-Type'] = 'application/json;charset=utf-8'
-    # params = {to: "#{mobile}", appId: appid, templateId: templateid, datas: ["#{captcha}", '30'], data: ''}
-    # conn.post "/2013-12-26/Accounts/#{account}/SMS/TemplateSMS?sig=#{sig}", params.to_json
+    auth = Base64.strict_encode64(account + ":" + timestamp)
+    sig = Digest::MD5.hexdigest(account + account_token + timestamp)
+
+    conn.headers['Accept'] = 'application/json'
+    conn.headers['Authorization'] = auth
+    conn.headers['Content-Type'] = 'application/json;charset=utf-8'
+    params = {to: "#{mobile}", appId: appid, templateId: templateid, datas: ["#{captcha}", '30'], data: ''}
+    conn.post "/2013-12-26/Accounts/#{account}/SMS/TemplateSMS?sig=#{sig}", params.to_json
 
     token = Digest::MD5.hexdigest(mobile)
     if request[:action].eql?('binding')
