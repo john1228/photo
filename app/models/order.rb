@@ -3,7 +3,7 @@ class Order < ActiveRecord::Base
   belongs_to :user
   belongs_to :photographer
   belongs_to :works, class: Works
-  STATUS = {unpay: 0, pay: 1, done: 2, complete: 3, delete: 4}
+  enum status: [:unpaid, :pay, :done, :complete, :deleted]
 
   def detail
     {
@@ -23,7 +23,7 @@ class Order < ActiveRecord::Base
         },
         coupons: coupons||'',
         price: price,
-        status: status,
+        status: Order.statuses[status],
         progress: progress?,
         created: created_at.to_i
     }
