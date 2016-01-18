@@ -34,14 +34,9 @@ class LoginController < ApplicationController
           user = User.create(
               mobile: SecureRandom.uuid,
               sns: sns_key,
-              profile_attributes: {
-                  name: user_info['nickname'],
-                  avatar: user_info['figureurl_qq_1'],
-                  birthday: "#{user_info['figureurl_qq_1']}",
-                  gender: user_info['gender'].eql?('男') ? 0 : 1,
-                  identity: Profile.identities[:enthusiast]
-              },
-              new: 1
+              name: user_info['nickname'],
+              avatar: user_info['headimgurl'],
+              gender: user_info['sex'].eql?('1') ? 0 : 1,
           )
         end
         user
@@ -63,15 +58,9 @@ class LoginController < ApplicationController
           user = User.create(
               mobile: SecureRandom.uuid,
               sns: sns_key,
-              profile_attributes: {
-                  name: user_info['nickname'],
-                  avatar: user_info['headimgurl'],
-                  signature: '',
-                  gender: user_info['sex'].eql?('1') ? 0 : 1,
-                  province: user_info['province'],
-                  city: user_info['city']
-              },
-              new: 1
+              name: user_info['nickname'],
+              avatar: user_info['headimgurl'],
+              gender: user_info['sex'].eql?('1') ? 0 : 1,
           )
         end
         user
@@ -90,14 +79,9 @@ class LoginController < ApplicationController
           user = User.create(
               mobile: SecureRandom.uuid,
               sns: sns_key,
-              profile_attributes: {
-                  name: user_info['screen_name'],
-                  avatar: user_info['avatar_hd'],
-                  signature: user_info['description'],
-                  gender: user_info['gender'].eql?('m') ? 0 : 1,
-                  address: user_info['location']
-              },
-              new: 1
+              name: user_info['nickname'],
+              avatar: user_info['headimgurl'],
+              gender: user_info['sex'].eql?('1') ? 0 : 1,
           )
         end
         user
