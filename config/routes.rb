@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   put 'users' => 'users#update'
   delete 'users/logout' => 'users#logout'
 
+  post 'login/sns' => 'login#sns'
+
   get 'photographers' => 'photographers#index'
   #get 'photographers/:id' => 'photographers#show'
   get 'photographers/show' => 'photographers#show'

@@ -4,17 +4,13 @@ class LoginController < ApplicationController
     if user.blank?
       render json: Failure.new('第三方登录失败')
     else
-      if Blacklist.find_by(user: user).present?
-        render json: {code: 0, message: '该用户已经被用户举报封存，如有疑问，可联系客服人员咨询解封'}
-      else
-        Rails.cache.write(user.token, user)
-        render json: {
-                   code: 1,
-                   data: {
-                       user: user.detail
-                   }
-               }
-      end
+      Rails.cache.write(user.token, user)
+      render json: {
+                 code: 1,
+                 data: {
+                     user: user.detail
+                 }
+             }
     end
   end
 
