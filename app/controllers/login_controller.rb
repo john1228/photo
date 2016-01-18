@@ -31,7 +31,7 @@ class LoginController < ApplicationController
         sns_key = "QQ_#{openid}"
         user = User.find_by(sns: sns_key)
         if user.nil?
-          user = User.new(
+          user = User.create(
               mobile: SecureRandom.uuid,
               sns: sns_key,
               profile_attributes: {
@@ -43,7 +43,6 @@ class LoginController < ApplicationController
               },
               new: 1
           )
-          user.save
         end
         user
       when 'weixin'
@@ -61,7 +60,7 @@ class LoginController < ApplicationController
         sns_key = "WeChat_#{user_info['openid']}"
         user = User.find_by(sns: sns_key)
         if user.nil?
-          user = User.new(
+          user = User.create(
               mobile: SecureRandom.uuid,
               sns: sns_key,
               profile_attributes: {
@@ -74,7 +73,6 @@ class LoginController < ApplicationController
               },
               new: 1
           )
-          user.save
         end
         user
       when 'sina'
@@ -89,7 +87,7 @@ class LoginController < ApplicationController
         sns_key = "sina_#{user_info['id']}"
         user = User.find_by(sns: sns_key)
         if user.nil?
-          user = User.new(
+          user = User.create(
               mobile: SecureRandom.uuid,
               sns: sns_key,
               profile_attributes: {
@@ -101,7 +99,6 @@ class LoginController < ApplicationController
               },
               new: 1
           )
-          user.save
         end
         user
       else
