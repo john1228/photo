@@ -1,8 +1,9 @@
 ActiveAdmin.register User do
   menu label: '用户'
 
-  filter :name, lable: '姓名'
+  filter :name
   permit_params :name
+  actions :index, :show
 
   index do
     selectable_column
@@ -12,6 +13,7 @@ ActiveAdmin.register User do
     column('生日') { |user| (user.birthday.strftime('%Y-%m-%d') rescue '') }
     column('绑定手机', :mobile)
     column('注册日期') { |user| user.created_at.strftime('%Y-%m-%d %H:%M:%S') }
+    actions
   end
 
   show do

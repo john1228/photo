@@ -25,20 +25,20 @@ ActiveAdmin.register ChildStar do
 
   form html: {enctype: 'multipart/form-data'} do |f|
     f.inputs '作品' do
-      f.input :name, label: '名称'
-      f.input :nickname, label: '昵称'
-      f.input :country, label: '国家', as: :string
-      f.input :gender, label: '性别'
-      f.input :nation, label: '民族'
-      f.input :height, label: '身高'
-      f.input :weight, label: '体重'
-      f.input :birthday, label: '生日', as: :string
-      f.input :city, label: '城市'
-      f.input :price, label: '价格'
+      f.input :name
+      f.input :nickname
+      f.input :country, as: :string
+      f.input :gender
+      f.input :nation
+      f.input :height
+      f.input :weight
+      f.input :birthday, as: :datepicker
+      f.input :city
+      f.input :price
     end
     f.inputs '作品照片' do
       f.has_many :child_photos, heading: false do |photo|
-        photo.input :photo, label: '照片', as: :file
+        photo.input :photo, as: :file
       end
     end
     f.submit('确定')

@@ -4,6 +4,7 @@
       photographer: '摄影师'
       user: '用户'
       child_star: '童星'
+      child_photo: '童星照片'
       admin_user: '管理员'
       order: '订单'
       works: '作品'
@@ -25,3 +26,18 @@
         intro: '介绍'
       works_photo:
         photo: '照片'
+      child_star:
+        name: '名称'
+        nickname: '昵称'
+        country: '国家'
+        gender: '性别'
+        nation: '民族'
+        height: '身高'
+        weight: '体重'
+        birthday: '生日'
+        city: '城市'
+        price: '价格'
+      child_photo:
+        photo: '照片'
+
+
