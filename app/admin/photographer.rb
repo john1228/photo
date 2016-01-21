@@ -36,11 +36,11 @@ ActiveAdmin.register Photographer do
 
   form html: {enctype: 'multipart/form-data'} do |f|
     f.inputs '摄影师' do
-      f.input :name, label: '名字'
-      f.input :avatar, label: '头像'
-      f.input :level, label: '级别', as: :select, collection: [['钻石', 1], ['皇冠', 2]], include_blank: false
-      f.input :price, label: '价格'
-      f.input :city, label: '服务城市'
+      f.input :name
+      f.input :avatar
+      f.input :level, as: :select, collection: [['钻石', 1], ['皇冠', 2]], include_blank: false
+      f.input :price
+      f.input :city
     end
     f.submit('确定')
   end

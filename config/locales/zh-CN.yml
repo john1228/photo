@@ -1,0 +1,27 @@
+"zh-CN":
+  activerecord:
+    models:
+      photographer: '摄影师'
+      user: '用户'
+      child_star: '童星'
+      admin_user: '管理员'
+      order: '订单'
+      works: '作品'
+      works_photo: '作品图片'
+    attributes:
+      photographer:
+        name: '名字'
+        avatar: '头像'
+        level: '级别'
+        price: '价格'
+        city: '城市'
+      works:
+        title: '名称'
+        works_type: '类型'
+        cover: '封面'
+        during: '持续时间(小时)'
+        price: '价格(元)'
+        discount: '折扣价(元)'
+        intro: '介绍'
+      works_photo:
+        photo: '照片'
