@@ -1,5 +1,5 @@
 module Callback
-  class AlipayController < BaseController
+  class AlipayController < ApplicationController
     def callback
       if params['trade_status'].eql?('TRADE_SUCCESS')
         trade_no = params[:trade_no]

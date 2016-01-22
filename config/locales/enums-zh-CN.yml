@@ -1,0 +1,6 @@
+"zh-CN":
+  enums:
+    banner:
+      type:
+        home: '首页'
+        child: '童星'

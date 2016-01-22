@@ -30,6 +30,7 @@ gem 'carrierwave'
 gem 'puma'
 gem 'mini_magick'
 gem 'bootstrap-sass'
+gem 'enum_help'
 
 
 #gem 'apn_on_rails'

@@ -146,6 +146,7 @@
     <orderEntry type="library" scope="PROVIDED" name="coffee-script (v2.3.0, RVM: ruby-2.1.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="coffee-script-source (v1.9.1, RVM: ruby-2.1.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="devise (v3.4.1, RVM: ruby-2.1.4) [gem]" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="enum_help (v0.0.14, RVM: ruby-2.1.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="erubis (v2.7.0, RVM: ruby-2.1.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="execjs (v2.4.0, RVM: ruby-2.1.4) [gem]" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="fancybox2-rails (v0.2.8, RVM: ruby-2.1.4) [gem]" level="application" />

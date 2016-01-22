@@ -1,5 +1,5 @@
 module Callback
-  class WebchatController < BaseController
+  class WebchatController < ApplicationController
     def callback
       request_data = Hash.from_xml(request.body.read)['xml'].symbolize_keys
       trade_no = request_data[:transaction_id]
