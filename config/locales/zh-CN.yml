@@ -42,9 +42,9 @@
       child_photo:
         photo: '照片'
       banner:
-        'type': '类型'
-        'image': '图片'
-        'url': '链接地址'
+        type: '类型'
+        image: '图片'
+        url: '链接地址'
         start_date: '开始日期'
         end_date: '结束日期'
       transaction:
@@ -55,5 +55,10 @@
         buyer_email: '购买者邮箱'
         price: '支付金额'
         created_at: '支付日期'
+  enums:
+    banner:
+      type:
+        home: '首页'
+        child: '童星'
 
 
