@@ -23,7 +23,7 @@ ActiveAdmin.register Banner do
 
   form html: {enctype: 'multipart/form-data'} do |f|
     f.inputs '广告' do
-      f.input :type, as: :select, collection: Banner.types.map { |key, value| [I18n.t("enums.banner.type.#{key}"), value] }, include_blank: false
+      f.input :type, as: :select, collection: Banner.types.keys.map { |key| [I18n.t("enums.banner.type.#{key}"), key] }, include_blank: false
       f.input :image, as: :file
       f.input :url, as: :url
       f.input :start_date, as: :datepicker
