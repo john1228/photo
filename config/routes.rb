@@ -56,4 +56,6 @@ Rails.application.routes.draw do
 
   get 'comments' => 'comments#index'
   post 'comments' => 'comments#create'
+
+  get 'deploy' => 'deploy#index'
 end
