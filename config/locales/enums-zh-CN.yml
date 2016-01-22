@@ -1,0 +1,79 @@
+"zh-CN":
+  enums:
+    user_registration:
+        gender:
+          male: "男"
+          female: "女"
+        source:
+          meixing: "美型"
+          input: "录入"
+        reg_type:
+          associate_member: "准会员"
+          member: "会员"
+    admin_user:
+      role:
+        super: "美型管理员"
+        admin: "管理员"
+        cms: "cms"
+        market: "market"
+        operator: "operator"
+        superadmin: "管理员"
+        sale: "销售"
+        front_desk: "前台"
+        finance: "财务"
+        store_manager: "店长"
+        store_admin: "管理员"
+    membership_card_type:
+      card_type:
+        stored: "储值"
+        measured: "次卡"
+        clocked: "期限"
+        course: "课程卡"
+    membership_card:
+      card_type:
+        stored: "储值卡"
+        measured: "次卡"
+        clocked: "期限卡"
+        course: "课程卡"
+      status:
+        to_be_activated: '待激活'
+        normal: '正常'
+        disable: '停用'
+    membership_card_log:
+      pay_type:
+        mx: '美型'
+        cash: '现金'
+        card: '刷卡'
+        transfer: '转账'
+        other: '其他'
+      action:
+        buy: '首次购买'
+        transfer_card: '转卡'
+        disable: '停用'
+        re_activated: '激活'
+        charge: '充值'
+        checkin: '签到'
+        cancel_checkin: '取消签到'
+    member:
+      origin:
+        mxing: '美型'
+        input: '输入'
+      member_type:
+        associate: '准会员'
+        full: '会员'
+      gender:
+        male: '男'
+        female: '女'
+    order:
+      pay_type:
+        alipay: '支付宝'
+        wx: '微信'
+        jd: '京东'
+      order_type:
+        platform: '美型平台'
+        face_to_face: '当面付'
+    profile:
+      gender:
+        male: '男'
+        female: '女'
+
