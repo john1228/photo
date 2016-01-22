@@ -36,7 +36,7 @@ class Works < ActiveRecord::Base
             photos: works_photos.collect { |photo| photo.detail }
         },
         photographer: photographer.detail,
-        photographed: orders.where(status: [Order.statuses[:complete], Order::STATUS[:done]], works_id: id).count
+        photographed: orders.where(status: [Order.statuses[:complete], Order.statuses[:done]], works_id: id).count
     }
   end
 end
