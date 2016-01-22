@@ -13,22 +13,30 @@ class OrdersController < ApplicationController
         else
           appoint_time = 2
         end
-        conditions = conditions.merge(status: Order.statuses[:pay], appoint_data: Date.today, appoint_time: appoint_time)
+        render json: {
+                   code: 1,
+                   data: {
+                       orders: @user.orders.pay.where(
+                           status: Order.statuses[:pay],
+                           appoint_data: Date.today,
+                           appoint_time: appoint_time
+                       ).map { |order| order.detail }
+                   }
+               }
       when 'comment'
-        conditions = conditions.merge(status: Order.statuses[:done])
+        render json: {
+                   code: 1,
+                   data: {orders: @user.orders.done.where(conditions).order(id: :desc).page(params[:page]||1).collect { |order| order.detail }}
+               }
       else
     end
 
-    render json: {
-               code: 1,
-               data: {orders: @user.orders.pay.where(conditions).order(id: :desc).page(params[:page]||1).collect { |order| order.detail }}
-           }
+
   end
 
 
   def create
     works = Works.find_by(id: params[:id])
-
     if works.blank?
       render json: {code: 0, message: '添加订单失败'}
     else
@@ -47,15 +55,7 @@ class OrdersController < ApplicationController
       end
     end
   end
-
-
-  def pay
-    order = Order.find_by(order_no: params[:id])
-    if order.update(status: Order::STATUS[:pay])
-      #TODO: 保存交易信息
-    end
-    render json: {code: 1}
-  end
+  
 
   def show
     order = @user.orders.find_by(order_no: params[:no])
@@ -71,7 +71,7 @@ class OrdersController < ApplicationController
       order.deleted!
       render json: {code: 1}
     else
-      render json: {code: 0,message: '该订单无法删除'}
+      render json: {code: 0, message: '该订单无法删除'}
     end
   end
 
