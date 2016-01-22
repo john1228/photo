@@ -28,8 +28,7 @@ class Photographer < ActiveRecord::Base
         level: level,
         price: price,
         city: city,
-
-        photos: orders.where(status: [Order::STATUS[:complete], Order::STATUS[:done]]).count,
+        photos: orders.where(status: [Order.statuses[:complete], Order.statuses[:done]]).count,
         score: {
             com: (comments.average('(pro+att+pun)').to_f).round(1),
             detail: {

@@ -13,15 +13,15 @@ class OrdersController < ApplicationController
         else
           appoint_time = 2
         end
-        conditions = conditions.merge(status: Order::STATUS[:pay], appoint_data: Date.today, appoint_time: appoint_time)
+        conditions = conditions.merge(status: Order.statuses[:pay], appoint_data: Date.today, appoint_time: appoint_time)
       when 'comment'
-        conditions = conditions.merge(status: Order::STATUS[:done])
+        conditions = conditions.merge(status: Order.statuses[:done])
       else
     end
 
     render json: {
                code: 1,
-               data: {orders: @user.orders.where(conditions).order(id: :desc).page(params[:page]||1).collect { |order| order.detail }}
+               data: {orders: @user.orders.pay.where(conditions).order(id: :desc).page(params[:page]||1).collect { |order| order.detail }}
            }
   end
 
@@ -67,11 +67,11 @@ class OrdersController < ApplicationController
 
   def delete
     order = @user.orders.find_by(order_no: params[:no])
-    begin
-      order.update(status: Order::STATUS[:delete])
+    if order.may_deleted?
+      order.deleted!
       render json: {code: 1}
-    rescue
-      render json: {code: 0, message: '删除订单失败'}
+    else
+      render json: {code: 0,message: '该订单无法删除'}
     end
   end
 
