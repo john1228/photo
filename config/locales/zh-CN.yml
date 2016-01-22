@@ -9,6 +9,8 @@
       order: '订单'
       works: '作品'
       works_photo: '作品图片'
+      banner: '广告'
+      transaction: '交易流水'
     attributes:
       photographer:
         name: '名字'
@@ -39,5 +41,19 @@
         price: '价格'
       child_photo:
         photo: '照片'
+      banner:
+        'type': '类型'
+        'image': '图片'
+        'url': '链接地址'
+        start_date: '开始日期'
+        end_date: '结束日期'
+      transaction:
+        order_no: '订单编号'
+        'no': '交易流水'
+        source: '支付方式'
+        buy_id: '购买者ID'
+        buyer_email: '购买者邮箱'
+        price: '支付金额'
+        created_at: '支付日期'
 
 
