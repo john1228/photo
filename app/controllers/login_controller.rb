@@ -18,7 +18,7 @@ class LoginController < ApplicationController
   def sns_login(sns, code)
     case sns
       when 'qq'
-        oauth_consumer_key = '1103429959'
+        oauth_consumer_key = '1104792015'
         host = 'https://graph.qq.com/'
         conn = Faraday.new(:url => host)
         #获取ME
@@ -41,8 +41,8 @@ class LoginController < ApplicationController
         end
         user
       when 'weixin'
-        appid = 'wxcf5397f869f11922'
-        secret = 'd1df9bb3aa1954f501814a40175a4f31'
+        appid = 'wx30591704a611e1fc'
+        secret = 'd4624c36b6795d1d99dcf0547af5443d'
         grant_type = 'authorization_code'
         host = 'https://api.weixin.qq.com'
         conn = Faraday.new(:url => host)
