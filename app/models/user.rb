@@ -39,7 +39,7 @@ class User < ActiveRecord::Base
         gender: gender||0,
         birthday: (birthday||Date.today.prev_year(15)).strftime('%Y-%m-%d'),
         age: age,
-        mobile: mobile.nil? ? '' : mobile,
+        mobile: (mobile.nil?||mobile.length.eql?(36)) ? '' : mobile,
         sns: sns||''
     }
     base = base.merge(baby: {name: baby_name, gender: baby_gender, birthday: baby_birthday}) unless baby_name.nil?
