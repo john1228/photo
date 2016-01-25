@@ -27,7 +27,7 @@ ActiveAdmin.register Works do
         column('联系人', :contact)
         column('联系电话', :phone)
         column('支付类型', :pay_type)
-        column('状态') { |order| order.status_name }
+        column('状态') { |order| order.status_i18n }
       end
     end
   end

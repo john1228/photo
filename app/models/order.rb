@@ -50,26 +50,8 @@ class Order < ActiveRecord::Base
     end
   end
 
-  def status_name
-    case status
-      when STATUS[:unpay]
-        '未支付'
-      when STATUS[:pay]
-        '已付款'
-      when STATUS[:done]
-        '已完成'
-      when STATUS[:complete]
-        '已评价'
-      when STATUS[:delete]
-        '已取消'
-      else
-        '错误到状态'
-    end
-  end
-
   private
   def build_default
     self.order_no = Time.now.strftime('%Y%m%d%H%M%S%L')+('%03d' % rand(100))
-    self.status = STATUS[:unpay]
   end
 end
