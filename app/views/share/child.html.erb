@@ -1,0 +1,30 @@
+<div class="banner">
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <% @child.child_photos.each { |photo| %>
+          <div class="swiper-slide"><%= image_tag(photo.photo.url) %></div>
+      <% } %>
+    </div>
+  </div>
+</div>
+<div class="content">
+  <ul class="content-ul">
+    <li><span class="li-font">￥
+      <%= @child.price %>.00</span>摄影费/天
+    </li>
+    <li class="li-two"><%= @child.name %></li>
+    <li>
+      <ul class="ul-text">
+        <li><span>昵称</span><%= @child.nickname %></li>
+        <li><span>国籍</span><%= @child.country %></li>
+        <li><span>性别</span><%= @child.gender.eql?(1) ? '女' : '男' %></li>
+        <li><span>名族</span><%= @child.nation %></li>
+        <li><span>身高</span><%= @child.height %></li>
+        <li><span>体重</span><%= @child.weight %></li>
+        <li><span>出生</span><%= @child.birthday %></li>
+        <li><span>城市</span><%= @child.city %></li>
+      </ul>
+    </li>
+    <li>童星号<span class="number-font"><%= @child.id %></span></li>
+  </ul>
+</div>
