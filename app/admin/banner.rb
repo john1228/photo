@@ -20,10 +20,10 @@ ActiveAdmin.register Banner do
       row :type
       row :image
       row :url
-      row do
+      row :start_date do
         banner.start_date.strftime('%Y-%m-%d')
       end
-      row do
+      row :end_date do
         banner.end_date.strftime('%Y-%m-%d')
       end
     end
