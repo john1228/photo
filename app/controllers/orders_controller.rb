@@ -26,9 +26,13 @@ class OrdersController < ApplicationController
       when 'comment'
         render json: {
                    code: 1,
-                   data: {orders: @user.orders.done.where(conditions).order(id: :desc).page(params[:page]||1).collect { |order| order.detail }}
+                   data: {orders: @user.orders.done.order(id: :desc).page(params[:page]||1).collect { |order| order.detail }}
                }
       else
+        render json: {
+                   code: 1,
+                   data: {orders: @user.orders.order(id: :desc).page(params[:page]||1).collect { |order| order.detail }}
+               }
     end
 
 
@@ -55,7 +59,7 @@ class OrdersController < ApplicationController
       end
     end
   end
-  
+
 
   def show
     order = @user.orders.find_by(order_no: params[:no])
