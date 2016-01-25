@@ -6,8 +6,12 @@ ActiveAdmin.register Banner do
     column :type
     column :image
     column :url
-    column :start_date
-    column :end_date
+    column(:start_date) do |banner|
+      banner.strftime('%Y-%m-%d')
+    end
+    column(:end_date) do |banner|
+      banner.strftime('%Y-%m-%d')
+    end
     actions
   end
 
