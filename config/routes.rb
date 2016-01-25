@@ -58,4 +58,6 @@ Rails.application.routes.draw do
   post 'comments' => 'comments#create'
 
   get 'deploy' => 'deploy#index'
+
+  get 'share/:id/child_star' => 'share#child'
 end
