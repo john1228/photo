@@ -2,7 +2,7 @@ class DeployController < ApplicationController
   def index
     render json: {
                code: 1,
-               banner: {
+               data: {
                    home: Banner.home.where('start_date <= ? and end_date >= ?', Date.today, Date.today).map { |banner|
                      {
                          image: banner.image.url,
