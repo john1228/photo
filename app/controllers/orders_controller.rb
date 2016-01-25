@@ -44,7 +44,7 @@ class OrdersController < ApplicationController
     if works.blank?
       render json: {code: 0, message: '添加订单失败'}
     else
-      order = @user.orders.unpay.new(
+      order = @user.orders.unpaid.new(
           photographer_id: works.photographer.id,
           works_id: works.id,
           appoint_date: params[:date], appoint_time: params[:time], appoint_address: params[:address],

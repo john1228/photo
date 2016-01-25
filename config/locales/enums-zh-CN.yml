@@ -2,7 +2,7 @@
   enums:
     order:
       status:
-        unpay: '未支付'
+        unpaid: '未支付'
         pay: '已付款'
         done: '已完成'
         complete: '已评价'
