@@ -69,8 +69,7 @@ class OrdersController < ApplicationController
 
   def delete
     order = @user.orders.find_by(order_no: params[:no])
-    if order.may_deleted?
-      order.deleted!
+    if order.deleted!
       render json: {code: 1}
     else
       render json: {code: 0, message: '该订单无法删除'}
