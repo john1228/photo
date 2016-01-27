@@ -29,7 +29,7 @@ class OrdersController < ApplicationController
       else
         render json: {
                    code: 1,
-                   data: {orders: @user.orders.order(id: :desc).page(params[:page]||1).collect { |order| order.detail }}
+                   data: {orders: @user.orders.where.not(status: Order.status['deleted']).order(id: :desc).page(params[:page]||1).collect { |order| order.detail }}
                }
     end
 
