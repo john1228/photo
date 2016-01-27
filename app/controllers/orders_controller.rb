@@ -16,7 +16,7 @@ class OrdersController < ApplicationController
                    code: 1,
                    data: {
                        orders: @user.orders.pay.where(
-                           appoint_data: Date.today,
+                           appoint_date: Date.today,
                            appoint_time: appoint_time
                        ).map { |order| order.detail }
                    }
