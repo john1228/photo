@@ -2,7 +2,6 @@ class OrdersController < ApplicationController
   before_action :verify_auth_token
 
   def index
-    conditions = {}
     case params[:list]
       when 'process'
         hour = Time.now.hour
@@ -17,7 +16,6 @@ class OrdersController < ApplicationController
                    code: 1,
                    data: {
                        orders: @user.orders.pay.where(
-                           status: Order.statuses[:pay],
                            appoint_data: Date.today,
                            appoint_time: appoint_time
                        ).map { |order| order.detail }
